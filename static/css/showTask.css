@@ -1,0 +1,55 @@
+div#showTask-general{
+  width: 40vw;
+  border: 2px solid black;
+  border-radius: 10px 10px 5px 5px;
+  background: rgba(88, 229, 53, 0.85);
+
+  position: absolute;
+}
+
+div#showTask-navbar{
+  background-color: lightgray;
+  border-bottom: 2px solid gray;
+}
+
+div#showTask{
+  min-height: 300px;
+  padding: 20px;
+}
+
+div#priorTeamDate > div{
+  border-right: 1px solid black;
+}
+
+div#priorTeamDate > div > div{
+  text-decoration-line: underline;
+}
+
+div#priorTeamDate > div > p{
+  font-weight: 400;
+}
+
+@media (max-width: 768px){
+  div#showTask-general{
+    width: 50vw;
+    left: 25vw;
+  }
+}
+
+@media (max-width: 500px){
+  div#showTask-general{
+    width: 60vw;
+    left: 20vw;
+  } 
+}
+
+@media (max-width: 360px){
+  div#showTask-general{
+    width: 76vw;
+    left: 12vw;
+  }
+
+  div#priorTeamDate > div{
+    border: 0px;
+  }
+}

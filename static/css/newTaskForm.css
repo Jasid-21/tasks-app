@@ -1,0 +1,59 @@
+#masterContainer{
+    margin: 0px;
+    padding: 0px;
+}
+
+.mainDiv{
+    padding-bottom: 20px;
+}
+
+form#submitForm > div{
+    margin-top: 3vh;
+}
+
+form#submitForm > div > label{
+    font-weight: bold;
+}
+
+div#radioForm{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.teamName{
+    cursor: pointer;
+}
+
+.txTeam{
+    background-color: #EEEEEE;
+    margin-left: 3vw;
+    border-radius: 5px;
+}
+
+.submitButton{
+    border-radius: 5px;
+    background-color: lightgreen;
+    border:1px solid  green;
+    font-weight: 600;
+}
+
+.cancelButton{
+    border-radius: 5px;
+    margin-left: 1vw;
+    background-color: lightcoral;
+    border: 1px solid red;
+    font-weight: 600;
+}
+
+@media (min-width: 0px){
+    form#submitForm{
+        width: 90%;
+    }
+}
+
+@media (min-width: 600px){
+    form#submitForm{
+        width: 50%;
+    }
+}

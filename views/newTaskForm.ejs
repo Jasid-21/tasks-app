@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/newTaskForm.css">
+		<%- include('components/header.ejs') %>
+		<title>Create: New Task</title>
+	</head>
+	<body>
+		<div id="masterContainer" class="container-fluid">
+			<%- include("components/navbar.ejs") %>
+			<div class="mainDiv container" style="display:flex; justify-content:center;">
+				<form id="submitForm">
+					<div class="container" style="display:flex; justify-content: center;">
+						<h1 class="h3" style="font-style:italic;">New task form</h1>
+					</div>
+					<hr>
+					<div style="width:100%;">
+						<label>Name: </label>
+						<input type="text" id="txName" name="name" style="width:100%;" required>
+					</div>
+	
+					<div>
+						<label>My proprity: </label>
+						<div id="radioForm">
+							<div>
+								<input type="radio" name="priority" value="relax" class="radio-item">
+								<label for="relax">Relax</label>	
+							</div>
+							<div>
+								<input type="radio" name="priority" value="normal" class="radio-item" checked>
+								<label for="normal">Normal</label>
+							</div>
+							<div>
+								<input type="radio" name="priority" value="important" class="radio-item">
+								<label for="important">Important</label>
+							</div>
+							<div>
+								<input type="radio" name="priority" value="very" class="radio-item">
+								<label for="very">Very Important</label>
+							</div>
+						</div>	
+					</div>
+	
+					<div style="display:flex;">
+						<div class="dropdown">
+						  <button class="btn btn-ghost dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="border:2px solid black; font-weight:600;">
+							Team
+						  </button>
+						  <ul id="dropdown_items" class="dropdown-menu" aria-labelledby="dropdownMenuButton1"></ul>
+						</div>
+						<input type="text" class="txTeam" name="team" required readonly>
+					</div>
+	
+					<div>
+						<label for="date">Max date: </label>
+						<input type="date" name="date" value="date" required>
+					</div>
+					
+					<div style="width:100%;">
+						<label>Description: </label>
+						<textarea id="description" rows="7" cols="100" name="desc" style="width:100%;"></textarea>	
+					</div>
+	
+					<div class="container-fluid" style="padding:0; display:flex; justify-content:flex-end;">
+						<div style="display:flex;">
+							<button class="submitButton" type="submit">Submit</button>
+							<button class="cancelButton">Back</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<%- include('components/footer.ejs') %>
+		
+		<script type="text/javascript">
+			const dropDown = document.getElementById('dropdown_items');
+			const txTeam = document.querySelector('.txTeam');
+			var selectedTeam = "";
+
+			for(var team of <%- JSON.stringify(teamNames) %>){
+				const taskDiv = document.createElement("div");
+				taskDiv.setAttribute("class", "dropdown-item teamName");
+				taskDiv.setAttribute("data-team", team.Id);
+				taskDiv.setAttribute("data-name", team.Name);
+				taskDiv.innerHTML = team.Name;
+
+				dropDown.appendChild(taskDiv);
+			}
+
+			const teamNames = document.getElementsByClassName('teamName');
+			for(var teamName of teamNames){
+				teamName.addEventListener('click', function(e){
+					e.preventDefault();
+					selectedTeam = this.getAttribute('data-team');
+					txTeam.value = this.innerHTML;
+				});
+			}
+		</script>
+		<script type="text/javascript" src="/scripts/general-functions.js"></script>
+		<script type="text/javascript" src="./scripts/newTask.js"></script>
+	</body>
+</html>

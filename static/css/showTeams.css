@@ -1,0 +1,61 @@
+div#itemsDiv > div.container-fluid{
+	padding:0;
+	display:flex;
+	justify-content:center;
+}
+.friend-item{
+	width: 100%;
+	min-height: 200px;
+	border: 2px solid black;
+	border-radius: 10px;
+	margin-bottom: 2vh;
+	padding-bottom: 2.2vh;
+	box-shadow: 5px 5px 10px;
+	background-color: #F1F0F6;
+}
+
+div.friend-item > div.container{
+	margin: 0;
+	padding: 0;
+}
+
+div.friend-item > div.container > *{
+	margin: 0;
+	padding-left: 2vh;
+	padding-right: 2vh;
+}
+
+div.friend-item > div.container > p.h3{
+	background-color:#5B8DD6;
+	border-radius:8px 8px 0 0;
+	border-bottom: 2px solid #3C5C8C;
+	color: white;
+	padding-bottom: 1vh;
+}
+
+div.list > p{
+	margin: 0;
+}
+
+div#tasksList > p{
+	text-decoration-line: underline;
+	cursor: pointer;
+}
+
+@media (min-width: 360px){
+	.friend-item{
+		width: 315px;
+	}
+}
+
+@media (min-width: 575px){
+	div#itemsDiv > div.container-fluid{
+		padding:0;
+		display:flex;
+		justify-content:flex-start;
+	}
+	
+	.friend-item{
+		width: 450px;
+	}
+}

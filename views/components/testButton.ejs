@@ -1,0 +1,22 @@
+<button id="testButton">test</button>
+<script type="text/javascript">
+	const testButton = document.getElementById('testButton');
+
+	testButton.addEventListener('click', function(e){
+		e.preventDefault();
+
+		const href = '/testDataBase';
+		var http = new XMLHttpRequest();
+		http.open('GET', href);
+		http.onreadystatechange = function(){
+			if(http.readyState == 4 && http.status == 200){
+				var data = http.responseText;
+				data = JSON.parse(data);
+				console.log(data);
+			}else{
+				console.log(`readyState: ${http.readyState}, status: ${http.status}`);
+			}
+		}
+		http.send(null);
+	});
+</script>

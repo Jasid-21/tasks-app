@@ -1,0 +1,50 @@
+.show-friends-window{
+    width: 300px;
+    min-height: 200px;
+    padding-bottom: 30px;
+
+    border: 1px solid rgb(71, 0, 102);
+    background: rgba(93, 42, 203, 0.8);
+    border-radius: 10px;
+}
+
+.contacts-main{
+    max-height: 200px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.contacts-main::-webkit-scrollbar{
+    width: 7px;
+    border-radius: 5px;
+}
+
+.contacts-main::-webkit-scrollbar-track{
+    background-color: rgba(90, 26, 143, 0.658);
+    border-radius: 5px;
+}
+
+.contacts-main::-webkit-scrollbar-thumb{
+    background-color: rgb(52, 0, 94);
+    border-radius: 5px;
+}
+
+.contacts-main::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(31, 0, 56);
+    border-radius: 5px;
+    width: 12px;
+}
+
+.contacts-error-message{
+    text-align: center;
+    color: rgb(138, 0, 0);
+}
+
+.contact-item{
+    height: 50px;
+    
+    background-color: rgb(239, 228, 241);
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px darkblue;
+    margin-bottom: 10px;
+}

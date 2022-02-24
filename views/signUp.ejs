@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<%- include('components/header.ejs') %>
+		<link rel="stylesheet" type="text/css" href="./css/signUp.css">
+		<title>Tasks: Sign Up</title>
+	</head>
+
+	<body>
+		<div id="masterContainer" class="container-fluid">
+			<form id="form">
+				<div id="iconDiv" class="iconDiv container-fluid">
+					<img src="./images/logo.png">
+				</div>
+				<div class="container" style="display:flex; justify-content:center;">
+					<h4>Register form</h4>
+				</div>
+				<hr style="margin-top:0;">
+				<label>Username:</label>
+				<input type="text" id="userName" name="username" required>
+				<br>
+				<br>
+				<label>Password:</label>
+				<input type="password" id="password" name="password1" required>
+				<br>
+				<br>
+				<label>Confirm password:</label>
+				<input type="password" id="confirm" name="password2" required>
+				<br>
+				<br>
+				<div id="submitDiv" class="submitDiv container-fluid">
+					<a href="/" style="font-style:italic; text-decoration:underline;">Back</a>
+					<button id="submitButton" type="submit">Enter</button>
+				</div>
+			</form>
+		</div>
+		<%- include('components/footer.ejs') %>
+		<script type="text/javascript" src="/scripts/signUp.js"></script>
+	</body>
+</html>

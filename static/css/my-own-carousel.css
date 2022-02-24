@@ -1,0 +1,63 @@
+.my-own-carousel{
+    background-color: gray;
+    margin: 10px;
+    border-radius: 7px;
+}
+
+.my-own-carousel-options{
+    background-color: rgb(94, 94, 94);
+    border-radius: 7px 7px 0px 0px;
+    border-bottom: 2px solid rgb(61, 61, 61);
+    padding: 3px;
+}
+
+.filterButton{
+	border-radius: 10px;
+	margin-right: 10px;
+    font-weight: 600;
+}
+
+.my-own-carousel-list{
+    min-height: 340px;
+    padding: 20px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.my-own-carousel-list::-webkit-scrollbar{
+    height: 12px;
+}
+
+.my-own-carousel-list::-webkit-scrollbar-track{
+    background-color: rgb(112, 112, 112);
+    border-radius: 0px 0px 5px 5px;
+}
+
+.my-own-carousel-list::-webkit-scrollbar-thumb{
+    height: 12px;
+    border-radius: 0px 0px 5px 5px;
+    background-color: rgb(77, 77, 77);
+}
+
+.my-own-carousel-list::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(48, 48, 48);
+    cursor: pointer;
+}
+
+.my-own-carousel-item{
+    width: 200px !important;
+	min-height: 300px;
+	border-radius: 0.5vw;
+    margin-right: 100px;
+	padding: 10px;
+	background-color: #E9E9E9;
+	box-shadow: 2px 2px 10px black;
+    white-space: normal;
+}
+
+.my-own-carousel-item:hover{
+	box-shadow: 2px 2px 10px blue;
+}

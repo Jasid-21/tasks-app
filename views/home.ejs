@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%- include('components/header.ejs') %>
+		<link rel="stylesheet" type="text/css" href="./css/home.css">
+		<link rel="stylesheet" type="text/css" href="/css/showTask.css">
+		<link rel="stylesheet" href="css/newContactWindow.css">
+		<link rel="stylesheet" href="css/show-contacts.css">
+		<link rel="stylesheet" href="css/newTeam.css">
+		<title>Tasks: Home</title>
+	</head>
+
+	<body>
+		<div id="masterContainer" class="container-fluid">
+			<%- include('components/navbar.ejs') %>
+			<div class="container-fluid" style="margin-top:2vh; display:flex; justify-content:flex-end;">
+				<div class="dropdown">
+				  <button class="btn btn-success dropdown-toggle new-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+				    New
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+				    <li><a class="dropdown-item option-item" href="/newTask">Task</a></li>
+				    <li><a id="newFriendLink" class="dropdown-item option-item" href="#">Contact</a></li>
+					<li><a id="newTeamLink" class="dropdown-item option-item" href="#">Team</a></li>
+				  </ul>
+				</div>
+			</div>
+			<div id="carouselContainer" class="my-own-carousel">
+				<div class="container-fluid my-own-carousel-options" style="display:flex; justify-content:flex-end; height:13%;">
+					<nav id="filter-nav" style="display:flex;">
+						<!--Botón de Filtro por Color-->
+						<div id="colorFilter">
+							<button id="colorButton" class="dropdown-toggle filterButton" type="button"data-bs-toggle="dropdown" aria-expanded="false">
+								Color
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="colorButton">
+							  <li><a id="removeC" class="dropdown-item">Remove</a></li>
+							  <hr>
+							  <li><a class="dropdown-item colorFilter-item" data-color="red">Red</a></li>
+							  <li><a class="dropdown-item colorFilter-item" data-color="orange">Orange</a></li>
+							  <li><a class="dropdown-item colorFilter-item" data-color="yellow">Yellow</a></li>
+							  <li><a class="dropdown-item colorFilter-item" data-color="green">Green</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+				<div id="my-carousel" class="my-carousel">
+					<ul class="my-own-carousel-list"></ul>
+				</div>
+			</div>
+		</div>
+
+		<%- include('components/footer.ejs') %>
+		<script type="text/javascript" src="./scripts/getTasks.js"></script>
+		<% if(locals.tasks){ %>
+			<script type="text/javascript">
+				var cont = 0;
+				for(var task of <%- JSON.stringify(tasks) %>){
+					mytasks.push(task);
+				}
+			</script>
+		<% } %>
+		<script type="text/javascript" src="/scripts/home.js"></script>
+	</body>
+</html>

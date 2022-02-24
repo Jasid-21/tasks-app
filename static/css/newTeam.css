@@ -1,0 +1,49 @@
+.new-team-form{
+    width: 220px;
+    border: 2px solid black;
+    background: rgba(29, 214, 102, 0.8);
+    border-radius: 10px;
+}
+
+.new_team_main{
+    width: 100%;
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.friends-list{
+    width: 100%;
+    height: 230px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+}
+
+.check-friend-container{
+    border-bottom: 1px solid gray;
+}
+
+.friend-item-label{
+    margin-left: 5px;
+}
+
+.new-team-name{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.new-team-submit{
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #126E4A;
+    border: 2px solid #1FC584;
+    color: white;
+}
+
+.new-team-submit:hover{
+    background-color: #0c4630;
+}

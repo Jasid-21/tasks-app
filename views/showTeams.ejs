@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="/css/showTeams.css">
+		<link rel="stylesheet" type="text/css" href="/css/showTask.css">
+		<%- include('components/header.ejs') %>
+		<title>Tasks: My Teams</title>
+	</head>
+	<body>
+		<div id="masterContainer" class="container">
+			<%- include('components/navbar.ejs') %>
+			<br>
+			<% if(locals.teamNames){ %>
+				<script type="text/javascript">
+					const teams = <%- JSON.stringify(teamNames) %>
+					const tasksforTeams = <%- JSON.stringify(totalTasks) %>
+					const usersforTeams = <%- JSON.stringify(totalUsers) %>
+				</script>
+				<div id="itemsDiv" class="container-fluid"></div>
+				
+				<script type="text/javascript" src="./scripts/showTeams.js"></script>
+			<% }else{ %>
+				<h1> You have no teams for show </h1>
+			<% } %>
+		</div>
+	</body>
+	<%- include('components/footer.ejs') %>
+</html>
