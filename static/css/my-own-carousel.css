@@ -1,5 +1,6 @@
 .my-own-carousel{
     background-color: gray;
+    background: rgba(128, 128, 128, 0.8);
     margin: 10px;
     border-radius: 7px;
 }

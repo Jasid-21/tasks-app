@@ -1,0 +1,114 @@
+.calendar-container{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.day-name-box-container{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-own-calendar{
+    width: min-content;
+    height: min-content;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.calendar-general-box{
+    width: 12vw;
+    text-align: center;
+}
+
+.day-name-box{
+    font-weight: 700;
+}
+
+.calendar-week{
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.calendar-box{
+    height: 11vw;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+}
+
+.num-cirlce{
+    width: 23px;
+    height: 23px;
+    background-color: lightgray;
+    border-radius: 50%;
+    border: 1px solid black;
+
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    top: -5px;
+    left: -7px;
+}
+
+.day-tasks-container{
+    height: 100%;
+    padding: 5px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.task-counter{
+    border: 1px solid red;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    display: none;
+}
+
+.task-box{
+    font-size: 13px;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+@media(max-width: 510px){
+    .num-cirlce{
+        width: 17px;
+        height: 17px;
+
+        font-size: 10px;
+    }
+
+    .task-counter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .day-tasks-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .task-box{
+        display: none;
+    }
+}
+
+@media(max-width: 390px){
+    .num-cirlce{
+        width: 15px;
+        height: 15px;
+
+        font-size: 8px;
+    }
+}

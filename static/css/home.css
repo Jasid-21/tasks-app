@@ -1,5 +1,11 @@
+body{
+	background-image: url("../images/home_background_pattern.jpg");
+	background-color: black;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
 #masterContainer{
-	background-color: #9BC6ED;
 	height: 99vh;
 	padding: 0px;
 }

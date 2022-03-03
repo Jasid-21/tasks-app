@@ -1,11 +1,11 @@
 .navbar-custom {
-background: rgb(86,183,255);
-background: linear-gradient(0deg, rgba(86,183,255,1) 54%, rgba(208,235,255,1) 100%);
-  border-bottom: 2px solid darkblue;
+  height: 180px;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 47%, rgba(29,70,201,0.8379726890756303) 78%);
 }
 
 .navbar-brand, .nav-link {
-  color: black;
+  color: white !important;
   font-weight: 600;
   cursor: pointer;
 }

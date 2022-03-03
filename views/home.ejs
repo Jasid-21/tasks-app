@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/newContactWindow.css">
 		<link rel="stylesheet" href="css/show-contacts.css">
 		<link rel="stylesheet" href="css/newTeam.css">
+		<link rel="stylesheet" href="css/calendar.css">
 		<title>Tasks: Home</title>
 	</head>
 
@@ -48,10 +49,13 @@
 					<ul class="my-own-carousel-list"></ul>
 				</div>
 			</div>
+			<br>
+			<%- include('calendar.ejs') %>
 		</div>
 
 		<%- include('components/footer.ejs') %>
 		<script type="text/javascript" src="./scripts/getTasks.js"></script>
+		
 		<% if(locals.tasks){ %>
 			<script type="text/javascript">
 				var cont = 0;
@@ -60,6 +64,7 @@
 				}
 			</script>
 		<% } %>
+		<script type="text/javascript" src="scripts/calendar.js"></script>
 		<script type="text/javascript" src="/scripts/home.js"></script>
 	</body>
 </html>
