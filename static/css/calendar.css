@@ -1,114 +1,137 @@
+.all-calendar-container{
+    background: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.4fr 1fr 0.6fr;
+}
+
+.months-container{
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
 .calendar-container{
-    height: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-left: 10px;
+    grid-row: 1/2;
+    grid-column: 2/3;
+
+    display: grid;
+    grid-template-rows: 0.4fr repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-tasks-container-gen{
+    border: 1px solid green;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0px;
+    padding-left: 10px;
+    grid-row: 1/2;
+    grid-column: 3/4;
+}
+
+.calendar-tasks-container{
+    height: 100%;
+    background-color: rgba(245, 244, 244, 0.8);
+    padding: 10px;
+}
+
+.month-name-container{
+    height: 40px;
+    border-bottom: 1px solid gray;
+    background-color: rgb(0, 0, 63);
+    color: white;
+    transition-property: background-color, color;
+    transition-duration: 400ms, 300ms;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.month-name-container.active{
+    background-color: rgb(0, 0, 24);
+}
+
+.month-name-container:hover{
+    background-color: rgba(0, 0, 63, 0.3);
+    color: black;
+    cursor: pointer;
+}
+
+.month-name{
+    font-weight: bold;
+}
+
+
+
+
+.day-name-box{
+    text-align: center;
+}
+
+
+.day-short-name{
+    display: none;
+}
+
+.calendar-box{
+    border: 1px solid black;
+    background-color: rgb(240, 240, 240);
+}
+
+.day-name-box{
+    font-weight: bold;
+}
+
+.day-value-box:hover{
+    cursor: pointer;
+}
+
+.day-circle{
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.task-count{
+    margin: auto;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+}
+
+
+
+
+
+.displayed-task-container{
+    padding: 5px;
+    border-bottom: 1px solid gray;
+
     display: flex;
     justify-content: center;
 }
 
-.day-name-box-container{
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
+.disp-task-imp{
+    font-size: 16px;
+    font-style: italic;
 }
 
-.my-own-calendar{
-    width: min-content;
-    height: min-content;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 10px;
-    border: 2px solid black;
-}
 
-.calendar-general-box{
-    width: 12vw;
-    text-align: center;
-}
 
-.day-name-box{
-    font-weight: 700;
-}
 
-.calendar-week{
-    margin-bottom: 5px;
-    display: flex;
-}
 
-.calendar-box{
-    height: 11vw;
-    background-color: white;
-    border: 1px solid black;
-    position: relative;
-}
-
-.num-cirlce{
-    width: 23px;
-    height: 23px;
-    background-color: lightgray;
-    border-radius: 50%;
-    border: 1px solid black;
-
-    text-align: center;
-    font-size: 12px;
-    font-weight: 600;
-    position: absolute;
-    top: -5px;
-    left: -7px;
-}
-
-.day-tasks-container{
-    height: 100%;
-    padding: 5px;
-
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-.task-counter{
-    border: 1px solid red;
-    width: 7vw;
-    height: 7vw;
-    border-radius: 50%;
-    display: none;
-}
-
-.task-box{
-    font-size: 13px;
-    border-radius: 5px;
-    margin-bottom: 3px;
-    overflow-x: hidden;
-    white-space: nowrap;
-}
-
-@media(max-width: 510px){
-    .num-cirlce{
-        width: 17px;
-        height: 17px;
-
-        font-size: 10px;
-    }
-
-    .task-counter{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .day-tasks-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .task-box{
+@media(max-width: 1280px){
+    .day-name{
         display: none;
     }
-}
 
-@media(max-width: 390px){
-    .num-cirlce{
-        width: 15px;
-        height: 15px;
-
-        font-size: 8px;
+    .day-short-name{
+        display: block;
     }
 }
