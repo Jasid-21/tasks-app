@@ -162,6 +162,7 @@ app.get("/", validateSession, function(req, resp){
 			console.log(error);
 			resp.send({status: 0, message: "Error geting tasks..."});
 		}else{
+			console.log(data);
 			resp.render('home', {tasks: data});
 		}
 	});

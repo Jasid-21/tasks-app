@@ -6,7 +6,7 @@ const next_year = document.querySelector('.next-year');
 const year_value = document.querySelector('.year-value');
 
 var curr_month = moment().format('MMMM');
-var curr_year = moment().format('YYYY');
+var curr_year = Number(moment().format('YYYY'));
 
 for(var month of month_names){
     if(month.getAttribute('data-month').toLowerCase() == curr_month.toLowerCase()){
