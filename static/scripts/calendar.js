@@ -5,9 +5,11 @@ const past_year = document.querySelector('.past-year');
 const next_year = document.querySelector('.next-year');
 const year_value = document.querySelector('.year-value');
 
+console.log(mytasks);
+
 var curr_month = moment().format('MMMM');
 var curr_year = Number(moment().format('YYYY'));
-
+console.log(mytasks);
 for(var month of month_names){
     if(month.getAttribute('data-month').toLowerCase() == curr_month.toLowerCase()){
         month.classList.add('active');
@@ -37,6 +39,7 @@ next_year.addEventListener('click', function(e){
     change_date(curr_year, curr_month, calendar_container, tasks_container);
 });
 
+console.log(mytasks);
 
 var first = moment().startOf('month');
 first = moment(first);
@@ -46,7 +49,7 @@ add_tasks(calendar_container, mytasks);
 set_click_event(calendar_container, tasks_container);
 
 month_click_event(month_names, calendar_container, tasks_container);
-
+console.log(mytasks);
 
 
 
