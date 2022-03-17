@@ -89,6 +89,7 @@ function create_calendar(first, container){
 }
 
 function add_tasks(container, tasks){
+    console.log(tasks);
     const boxes = container.querySelectorAll('.day-value-box');
     for(var box of boxes){
         var count = 0;
