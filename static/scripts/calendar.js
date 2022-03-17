@@ -89,12 +89,15 @@ function add_tasks(container, tasks){
     const boxes = container.querySelectorAll('.day-value-box');
     for(var box of boxes){
         var count = 0;
+        console.log(box.getAttribute('data-date'));
         for(var task of tasks){
             const task_date = moment(task.Date).format('YYYY-MM-DD');
+            console.log(task_date);
             if(box.getAttribute('data-date') == task_date){
                 count++;
             }
         }
+        console.log("-------------------------");
         if(count > 0){
             const color = setTaskColor(box.getAttribute('data-date'));
             const task_count = document.createElement('div');
