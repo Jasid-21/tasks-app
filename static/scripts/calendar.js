@@ -40,6 +40,7 @@ var first = moment().startOf('month');
 first = moment(first);
 const first_day = get_first_day(first);
 create_calendar(first_day, calendar_container);
+set_boxes_format(calendar_container);
 add_tasks(calendar_container, mytasks);
 set_click_event(calendar_container, tasks_container);
 
@@ -148,6 +149,7 @@ function month_click_event(month_names, container, tasks_container){
 
             const year = curr_year;
             const month = this.getAttribute('data-month');
+            curr_month = month;
             change_date(year, month, container, tasks_container);
         });
     }
@@ -160,6 +162,33 @@ function change_date(new_year = curr_year, new_month = curr_month, container, ta
 
     const first_day = get_first_day(first);
     create_calendar(first_day, container);
+    set_boxes_format(container);
     add_tasks(container, mytasks);
     set_click_event(container, tasks_container);
+}
+
+function set_boxes_format(calendar){
+    const boxes = calendar.querySelectorAll('.day-value-box');
+
+    var date = curr_month + "-" + curr_year;
+    var first = moment(date).startOf('mnth');
+    const first_date = moment(first);
+
+    var last = moment(date).endOf('month');
+    const last_date = moment(last);
+
+    for(var box of boxes){
+        const box_date = moment(box.getAttribute('data-date'));
+        if(box_date.diff(first_date) < 0){
+            box.classList.add('out_date-box');
+        }
+
+        if(box_date.diff(last_date) > 0){
+            box.classList.add('out_date-box');
+        }
+
+        if(box_date.format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
+            box.classList.add('current-date');
+        }
+    }
 }

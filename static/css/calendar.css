@@ -124,6 +124,7 @@
     height: 100%;
     background-color: rgba(245, 244, 244, 0.8);
     padding: 10px;
+    overflow: auto;
 }
 
 
@@ -143,6 +144,15 @@
 .calendar-box{
     border: 1px solid black;
     background-color: rgb(240, 240, 240);
+}
+
+.calendar-box.out_date-box{
+    background-color: rgb(202, 202, 202);
+    color: rgb(105, 105, 105);
+}
+
+.calendar-box.current-date{
+    box-shadow: inset 0px 0px 4px 2px rgb(35, 123, 255);
 }
 
 .day-value-box:hover{
