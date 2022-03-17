@@ -5,11 +5,8 @@ const past_year = document.querySelector('.past-year');
 const next_year = document.querySelector('.next-year');
 const year_value = document.querySelector('.year-value');
 
-console.log(mytasks);
-
 var curr_month = moment().format('MMMM');
 var curr_year = Number(moment().format('YYYY'));
-console.log(mytasks);
 for(var month of month_names){
     if(month.getAttribute('data-month').toLowerCase() == curr_month.toLowerCase()){
         month.classList.add('active');
@@ -39,8 +36,6 @@ next_year.addEventListener('click', function(e){
     change_date(curr_year, curr_month, calendar_container, tasks_container);
 });
 
-console.log(mytasks);
-
 var first = moment().startOf('month');
 first = moment(first);
 const first_day = get_first_day(first);
@@ -49,7 +44,7 @@ add_tasks(calendar_container, mytasks);
 set_click_event(calendar_container, tasks_container);
 
 month_click_event(month_names, calendar_container, tasks_container);
-console.log(mytasks);
+
 
 
 
@@ -89,19 +84,15 @@ function create_calendar(first, container){
 }
 
 function add_tasks(container, tasks){
-    console.log(tasks);
     const boxes = container.querySelectorAll('.day-value-box');
     for(var box of boxes){
         var count = 0;
-        console.log(box.getAttribute('data-date'));
         for(var task of tasks){
             const task_date = moment(task.Date.split('T')[0]).format('YYYY-MM-DD');
-            console.log(task_date);
             if(box.getAttribute('data-date') == task_date){
                 count++;
             }
         }
-        console.log("-------------------------");
         if(count > 0){
             const color = setTaskColor(box.getAttribute('data-date'));
             const task_count = document.createElement('div');
