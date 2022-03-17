@@ -95,7 +95,7 @@ function add_tasks(container, tasks){
         var count = 0;
         console.log(box.getAttribute('data-date'));
         for(var task of tasks){
-            const task_date = moment(task.Date).format('YYYY-MM-DD');
+            const task_date = moment(task.Date.split('T')[0]).format('YYYY-MM-DD');
             console.log(task_date);
             if(box.getAttribute('data-date') == task_date){
                 count++;
@@ -127,10 +127,10 @@ function set_click_event(container, tasks_container){
         box.addEventListener('click', function(e){
             e.preventDefault();
             tasks_container.innerHTML = null;
+
             const box_date = this.getAttribute('data-date');
-            var tasks_array = new Array();
             for(var task of mytasks){
-                const task_date = moment(task.Date).format('YYYY-MM-DD');
+                const task_date = moment(task.Date.split('T')[0]).format('YYYY-MM-DD');
                 if(box_date == task_date){
                     const disp_task_container = document.createElement('div');
                     disp_task_container.classList.add('displayed-task-container', 'container');
