@@ -162,7 +162,6 @@ app.get("/", validateSession, function(req, resp){
 			console.log(error);
 			resp.send({status: 0, message: "Error geting tasks..."});
 		}else{
-			console.log(data);
 			resp.render('home', {tasks: data});
 		}
 	});
@@ -231,14 +230,12 @@ app.delete('/deleteTask', validateSession, function(req, resp){
 app.post("/newFriend", [validateSession, upload.single("")], function(req, resp){
 	const user_id = req.id;
 	const friendname = req.body.friendname;
-	console.log(req.body);
 
 	connection.query(`SELECT Id FROM users WHERE username = '${friendname}'`, function(error, data){
 		if(error){
 			console.log(error);
 			resp.send({status: 0, message: "Error searching your friend's name..."});
 		}else{
-			console.log(data);
 			if(data.length > 0){
 				const friend_id = data[0].Id;
 				if(friend_id != user_id){
@@ -339,7 +336,6 @@ app.get("/myteams", validateSession, function(req, resp){
 			console.log(error);
 			resp.send({status: 0, message: "Error geting teams..."});
 		}else{
-			console.log(data);
 			resp.send({status: 1, data: data});
 		}
 	});

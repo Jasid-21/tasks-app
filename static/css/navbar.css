@@ -1,7 +1,16 @@
 .navbar-custom {
-  height: 180px;
+  min-height: 180px;
   background: rgb(2,0,36);
   background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 47%, rgba(29,70,201,0.8379726890756303) 78%);
+}
+
+button.navbar-toggler{
+  color: white !important;
+  border-color: white !important;
+}
+
+span.navbar-icon-custom{
+  color: white !important;
 }
 
 .navbar-brand, .nav-link {
