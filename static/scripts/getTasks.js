@@ -12,7 +12,6 @@ function taskItem(task, cont){
 
 	const p1 = document.createElement("p");
 	p1.setAttribute("class", "nameP h4");
-	p1.style.width = "90%";
 	p1.innerHTML = task.Name;
 
 	const dropdown = document.createElement("div");

@@ -1,13 +1,41 @@
 const calendar_container = document.querySelector('.calendar-container');
 const tasks_container = document.querySelector('.calendar-tasks-container');
 const month_names = document.querySelectorAll('.month-name-container');
+const past_year = document.querySelector('.past-year');
+const next_year = document.querySelector('.next-year');
+const year_value = document.querySelector('.year-value');
 
-const curr_month = moment().format('MMMM');
+var curr_month = moment().format('MMMM');
+var curr_year = moment().format('YYYY');
+
 for(var month of month_names){
     if(month.getAttribute('data-month').toLowerCase() == curr_month.toLowerCase()){
         month.classList.add('active');
     }
 }
+
+past_year.addEventListener('click', function(e){
+    e.preventDefault();
+
+    curr_year -= 1;
+    if(curr_year > 0){
+        year_value.innerHTML = curr_year;
+
+    }else{
+        curr_year += 1;
+    }
+
+    change_date(curr_year, curr_month, calendar_container, tasks_container);
+});
+
+next_year.addEventListener('click', function(e){
+    e.preventDefault();
+
+    curr_year += 1;
+    year_value.innerHTML = curr_year;
+
+    change_date(curr_year, curr_month, calendar_container, tasks_container);
+});
 
 
 var first = moment().startOf('month');
@@ -120,16 +148,20 @@ function month_click_event(month_names, container, tasks_container){
             }
             this.classList.add('active');
 
-            const year = moment().format('YYYY');
+            const year = curr_year;
             const month = this.getAttribute('data-month');
-            const date = year + "-" + month;
-            var first = moment(date).startOf('month');
-            first = moment(first);
-
-            const first_day = get_first_day(first);
-            create_calendar(first_day, container);
-            add_tasks(container, mytasks);
-            set_click_event(container, tasks_container);
+            change_date(year, month, container, tasks_container);
         });
     }
+}
+
+function change_date(new_year = curr_year, new_month = curr_month, container, tasks_container){
+    const date = new_year + "-" + new_month;
+    var first = moment(date).startOf('month');
+    first = moment(first);
+
+    const first_day = get_first_day(first);
+    create_calendar(first_day, container);
+    add_tasks(container, mytasks);
+    set_click_event(container, tasks_container);
 }

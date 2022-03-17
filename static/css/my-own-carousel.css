@@ -62,3 +62,9 @@
 .my-own-carousel-item:hover{
 	box-shadow: 2px 2px 10px blue;
 }
+
+.nameP{
+    width: 90%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
