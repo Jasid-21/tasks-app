@@ -1,8 +1,8 @@
 body{
 	background-image: url("../images/home_background_pattern.jpg");
-	background-color: black;
 	background-size: cover;
 	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 
 #masterContainer{
@@ -15,12 +15,30 @@ a:hover{
 }
 
 .new-button{
-	width: 140px;
+	width: 200px;
 	height: 100%;
-	background-color: rgb(10, 92, 10);
+	background-color: rgb(2, 8, 41);
+	border: 2px solid rgb(65, 77, 145);
 	color: white;
 	font-weight: 600;
 	border-radius: 1vh;
+
+	transition-property: background-color;
+	transition-duration: 300ms;
+}
+
+.dropdown ul {
+	width: 200px;
+}
+
+.dropdown li a:hover {
+	font-weight: 700;
+}
+
+.new-button:hover {
+	background-color: rgba(2, 8, 41, 0.3);
+	font-weight: bold;
+	color: white;
 }
 
 footer{

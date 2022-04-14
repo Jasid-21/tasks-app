@@ -1,7 +1,10 @@
+nav ul a {
+  color: black;
+}
+
 .navbar-custom {
-  min-height: 180px;
-  background: rgb(2,0,36);
-  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 47%, rgba(29,70,201,0.8379726890756303) 78%);
+  min-height: 120px;
+  background: rgba(0, 0, 0, 0.9);
 }
 
 button.navbar-toggler{
@@ -41,6 +44,11 @@ div#profileImg-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.logout:hover {
+  color: rgb(165, 13, 13) !important;
+  font-weight: 700;
 }
 
 @media (max-width: 360px){

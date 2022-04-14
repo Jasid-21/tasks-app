@@ -150,6 +150,7 @@ app.post("/signup", upload.single(""), function(req, resp){
 
 app.get("/", validateSession, function(req, resp){
 	const user_id = req.id;
+	const username = req.username;
 
 	connection.query(`SELECT * FROM 
 	(Users_Teams 
@@ -162,7 +163,7 @@ app.get("/", validateSession, function(req, resp){
 			console.log(error);
 			resp.send({status: 0, message: "Error geting tasks..."});
 		}else{
-			resp.render('home', {tasks: data});
+			resp.render('home', {tasks: data, username});
 		}
 	});
 });
@@ -401,13 +402,17 @@ function createUser(username, password){
 
 async function validateSession(req, resp, next){
 	const session_id = req.cookies.session_cookie;
-	connection.query(`SELECT * FROM sessions WHERE session_id = '${session_id}'`, function(error, data){
+	connection.query(`SELECT user_id, session_id, username FROM sessions 
+	INNER JOIN users
+	ON sessions.User_id = users.Id
+	AND session_id = '${session_id}'`, function(error, data){
 		if(error){
 			console.log(error);
 			resp.redirect("/login");
 		}else{
 			if(data.length > 0){
 				req.id = data[0].user_id;
+				req.username = data[0].username;
 				next();
 			}else{
 				resp.redirect("/login");
